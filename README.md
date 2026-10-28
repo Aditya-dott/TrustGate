@@ -158,10 +158,10 @@ cd frontend
 npm run build
 ```
 
-The repository also contains focused Python test scripts named `test_step*.py` and a Prompt Guard smoke test. They can be run from the repository root with Python, for example:
+The repository also contains focused Python validation scripts named `test_step*.py` and a Prompt Guard smoke test. Run the backend validation script from the repository root with:
 
 ```bash
-python -m unittest backend.test_step7
+python backend/test_step7.py
 ```
 
 ## Data and privacy
