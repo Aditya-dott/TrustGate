@@ -1,0 +1,14 @@
+fastapi>=0.110,<1
+uvicorn[standard]>=0.27,<1
+numpy>=1.26,<3
+joblib>=1.3,<2
+scikit-learn>=1.4,<2
+requests>=2.31,<3
+
+# Optional: enable PERSON and place-name detection in addition to regex PII scans.
+# Install the spaCy English model separately with:
+# python -m spacy download en_core_web_sm
+# spacy>=3.7,<4
+
+# Optional: needed only to retrain the classifier from the dataset.
+# pandas>=2.1,<3

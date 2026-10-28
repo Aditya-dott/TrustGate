@@ -1,0 +1,59 @@
+{
+  "embedding_backend": "local_hash_svd",
+  "labels": [
+    "benign",
+    "prompt_injection",
+    "jailbreak",
+    "data_exfiltration",
+    "model_extraction"
+  ],
+  "train_size": 1558,
+  "test_size": 390,
+  "binary_metrics": {
+    "accuracy": 0.9948717948717949,
+    "precision_malicious": 0.996415770609319,
+    "recall_malicious": 0.996415770609319,
+    "f1_malicious": 0.996415770609319,
+    "tp": 278,
+    "tn": 110,
+    "fp": 1,
+    "fn": 1
+  },
+  "confusion_matrix": [
+    [
+      110,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      69,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      6,
+      63,
+      0,
+      1
+    ],
+    [
+      1,
+      4,
+      0,
+      65,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      67
+    ]
+  ]
+}

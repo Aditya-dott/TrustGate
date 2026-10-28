@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* Base                                                               */
+/* ------------------------------------------------------------------ */
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    @apply bg-ink-950 text-ink-100 font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv11', 'tnum';
+    background-image:
+      radial-gradient(1200px 500px at 50% -10%, rgba(124,115,240,0.06), transparent 60%),
+      radial-gradient(800px 400px at 90% 80%, rgba(94,184,255,0.04), transparent 60%);
+    background-attachment: fixed;
+  }
+  * { box-sizing: border-box; }
+  ::selection {
+    background: rgba(124, 115, 240, 0.35);
+    color: #fff;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Custom scrollbar                                                    */
+/* ------------------------------------------------------------------ */
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.06);
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background-color: rgba(255,255,255,0.14); }
+
+/* ------------------------------------------------------------------ */
+/* Utility classes                                                     */
+/* ------------------------------------------------------------------ */
+
+@layer components {
+  /* Panel: elevated surface with subtle border and inset highlight */
+  .panel {
+    @apply rounded-2xl border border-ink-600/60 bg-ink-900/60 backdrop-blur-sm;
+    box-shadow:
+      inset 0 1px 0 0 rgba(255,255,255,0.03),
+      0 20px 40px -24px rgba(0,0,0,0.5);
+  }
+
+  /* Sub-panel: inner card living inside a panel */
+  .subpanel {
+    @apply rounded-xl border border-ink-600/50 bg-ink-800/40;
+  }
+
+  /* Muted label: small uppercase heading */
+  .label-eyebrow {
+    @apply text-[10.5px] uppercase tracking-[0.14em] text-ink-300 font-medium;
+  }
+
+  /* Section eyebrow */
+  .label-section {
+    @apply text-[11px] uppercase tracking-[0.18em] text-ink-200 font-semibold;
+  }
+
+  /* Numeric display */
+  .num-display {
+    @apply font-mono tabular-nums text-ink-100;
+  }
+
+  /* Hairline divider between rows */
+  .hairline {
+    @apply border-t border-ink-600/40;
+  }
+
+  /* Focus ring for buttons/inputs */
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-iris-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Fine grid background pattern (SVG data URI)                        */
+/* ------------------------------------------------------------------ */
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-position: -1px -1px;
+  mask-image: radial-gradient(ellipse at center, black, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 70%);
+}
+
+/* Shimmer skeleton loading */
+.shimmer {
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.03) 0%,
+    rgba(255,255,255,0.08) 50%,
+    rgba(255,255,255,0.03) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.4s linear infinite;
+}
+
+/* Recharts theme overrides */
+.recharts-cartesian-axis-line { stroke: rgba(255,255,255,0.05); }
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line { stroke: rgba(255,255,255,0.04); }
+.recharts-tooltip-cursor { fill: rgba(124,115,240,0.06); }
